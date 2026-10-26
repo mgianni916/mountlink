@@ -56,11 +56,9 @@ Other Linux distributions may use different package names.
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mountlink.git
+git clone https://github.com/mgianni916/mountlink.git
 cd mountlink
 ```
-
-Replace `YOUR_USERNAME` with the repository owner's GitHub username.
 
 ### 2. Install MountLink
 
