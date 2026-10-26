@@ -304,9 +304,6 @@ Bug reports, feature suggestions, and contributions are welcome if the repositor
 
 ## License
 
-
-## License
-
 MountLink is released under the MIT License.
 
 Copyright (c) 2026 Michael Gianni
