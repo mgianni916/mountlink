@@ -1118,27 +1118,19 @@ class MountLink(QObject):
         value = value.replace("`", "\\`")
         value = value.replace("%", "%%")
         return f'"{value}"'
-
     def write_autostart(self):
         AUTOSTART_FILE.parent.mkdir(
             parents=True, exist_ok=True
         )
 
-        python = Path(sys.executable).resolve()
-        script = Path(__file__).resolve()
-
-        command = (
-            self.desktop_quote(python)
-            + " "
-            + self.desktop_quote(script)
-        )
+        launcher = HOME / ".local" / "bin" / "mountlink"
 
         contents = (
             "[Desktop Entry]\n"
             "Type=Application\n"
             "Name=MountLink\n"
             "Comment=SSHFS Connection Manager for Linux\n"
-            f"Exec={command}\n"
+            f"Exec={launcher}\n"
             "Icon=folder-remote-symbolic\n"
             "Terminal=false\n"
             "X-GNOME-Autostart-enabled=true\n"
@@ -1148,6 +1140,8 @@ class MountLink(QObject):
         AUTOSTART_FILE.write_text(
             contents, encoding="utf-8"
         )
+
+        LOG.info("XFCE autostart configured: %s", launcher)
 
     def migrate_autostart(self):
         if not OLD_AUTOSTART.exists():
