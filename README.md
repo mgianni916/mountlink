@@ -9,7 +9,6 @@ Built with **Python, PySide6, SSHFS, and FUSE**.
 **Current version:** 1.0  
 **Platform:** Linux  
 **Desktop environment:** XFCE (primary target)  
-**License:** To be determined
 
 ---
 
@@ -305,7 +304,15 @@ Bug reports, feature suggestions, and contributions are welcome if the repositor
 
 ## License
 
-A license has not yet been selected. Until a license is added, the repository should not be assumed to grant permission to redistribute or modify the software.
+
+## License
+
+MountLink is released under the MIT License.
+
+Copyright (c) 2026 Michael Gianni
+
+See the [LICENSE](LICENSE) file for details.
+
 
 ---
 
