@@ -587,13 +587,11 @@ class MountLink(QObject):
         self.left_menu = QMenu()
         self.right_menu = QMenu()
 
+        self.right_menu.setContextMenu(self.right_menu)
         self.tray.setContextMenu(self.right_menu)
         self.tray.activated.connect(self.tray_activated)
 
         self.left_menu.aboutToHide.connect(
-            lambda: QTimer.singleShot(0, self.refresh)
-        )
-        self.right_menu.aboutToHide.connect(
             lambda: QTimer.singleShot(0, self.refresh)
         )
 
@@ -675,9 +673,6 @@ class MountLink(QObject):
 
         if not self.left_menu.isVisible():
             self.build_left_menu()
-
-        if not self.right_menu.isVisible():
-            self.build_right_menu()
 
     def build_left_menu(self):
         self.left_menu.clear()
