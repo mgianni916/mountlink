@@ -587,8 +587,12 @@ class MountLink(QObject):
         self.left_menu = QMenu()
         self.right_menu = QMenu()
 
-        self.right_menu.setContextMenu(self.right_menu)
+        # Build the right menu once at startup.
+        self.build_right_menu()
+
+        # Let Qt/XFCE handle right-click using the context menu.
         self.tray.setContextMenu(self.right_menu)
+        
         self.tray.activated.connect(self.tray_activated)
 
         self.left_menu.aboutToHide.connect(
